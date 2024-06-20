@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Webcam Cropper</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+  <script src="js/webcam.js"></script>
+  <script src="js/cropper.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="css/cropper.css"
+  />
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background-color: #2a2a2a;
+    }
+    .preview-container {
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center; /* centers items horizontally */
+      align-items: center; /* centers items vertically */
+      border-radius: 0.3em;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 3em;
+    }
+
+    .video-container {
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center; /* centers items horizontally */
+      align-items: center; /* centers items vertically */
+    }
+    video{
+      border-radius: 0.3em;
+    }
+    img {
+      display: block;
+      /* Important for cropper js*/
+      max-width: 100%;
+    }
+    button {
+      padding: 1em;
+      border-radius: 0.3em;
+      border: 2px solid #025bee;
+      background-color: #ffffff;
+      color: #025bee;
+    }
+    .container {
+      display: grid;
+      gap: 2em;
+      border-radius: 7px;
+    }
+    .wrapper {
+      width: min(90%, 2000px);
+      position: absolute;
+      transform: translateX(-50%);
+      top: 1em;
+      left: 50%;
+      background-color: #ffffff;
+      padding: 2em 3em;
+      border-radius: 0.5em;
+    }
+    button {
+      padding: 1em;
+      border-radius: 0.3em;
+      border: 2px solid #025bee;
+      background-color: #ffffff;
+      color: #025bee;
+    }
+    input[type="number"] {
+      width: 100px;
+      padding: 16px 5px;
+      border-radius: 0.3em;
+      border: 2px solid #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="video-container">
+        <video autoplay playsinline muted id="wc" width="400" height="400"></video>
+      </div>
+      <div class="preview-container">
+        <img id="preview-image" />
+      </div>
+    </div>
+    <div class="options hide" id="buttons">
+      <select id="device-list"></select>
+      <button type="button" id="2" onclick="captureNow()" >Capture</button>
+      <button id="4" onclick="cropReset()">Reset</button>
+      <input
+        id="row_input"
+        type="number"
+        placeholder="Enter Row"
+      />
+      <input
+        id="column_input"
+        type="number"
+        placeholder="Enter Column"
+      />
+      <button id="5" onclick="sendData()">Send Data</button>
+      <button id="6" onclick="startInterval()">Start Predicting</button>
+      <button id="7"onclick="stopInterval()">Stop Predicting</button>
+    </div>
+  </div>
+  <canvas id="canvas" style="display:none;"></canvas>
+</body>
+<script src="js/webcam_crop.js"></script>
+</html>

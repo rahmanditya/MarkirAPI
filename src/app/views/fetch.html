@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Node.js</title>
+</head>
+<body>
+    <h1>Interactive Node.js</h1>
+    <button id="callFunctionButton">Call Function</button>
+    <p id="result"></p>
+
+    <script>
+        let cropperData;
+        let json={};
+        document.getElementById('callFunctionButton').addEventListener('click', async function() {
+            await fetch('/park_slot')
+            .then(response => response.json()) // Parse the JSON from the response
+            .then(data => {cropperData = data})   // Do something with the data
+            .catch(error => console.error('Error:', error)); // Handle errors
+            console.log(cropperData);
+            for(i in cropperData){
+                let a = 0;
+                for(let j in cropperData[i]){
+                    a += cropperData[i][j];
+                }
+                json[i] = {class:a};
+            }
+            console.log(json);
+        });
+    </script>
+</body>
+</html>
