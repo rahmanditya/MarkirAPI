@@ -62,7 +62,8 @@ You can now interact with the API according to the routes defined in the applica
 
 ### API Routes that are accessible to send and get the data from the SQL
 - **Webcam**: Crop your parking slot manually to predict it the slot if it's occupied or not`/webcam`.
-- **Add Slot**: Send a cropped image into the database that automatically predict it`/parking_slot/add`.
+- **Add Slot**: Send a cropped image first into the database that later be predict it`/parking_slot/add`.
+- **Predict Image**: Predict the slots on interval of 5 seconds into the database.
 - **Get Layout Data**: Get a data `/layout` to from the database to the mobile teams to adapt the row and column.
 - **Get Status Data**: Get a request `/status` for a total slot status knowing that how many slot are occupied and not.
   
