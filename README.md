@@ -2,7 +2,7 @@
 
 The RESTful Marking API provides services to detect and predict the availability of parking spaces and save the data in a database in real-time. This API operates on Google Cloud Platform (GCP) and interacts with Cloud SQL Database to store and retrieve parking data.
 
-## Fitur 
+## Features
 
 - **Parking Spot Detection:** Crops images of parking lots and predicts whether parking slots are occupied or not.
 - **Real-Time Data Delivery:** Sends data every 5 seconds to Cloud SQL Database.
