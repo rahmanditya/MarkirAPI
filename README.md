@@ -14,7 +14,7 @@ Make sure that you have an environment below:
 - **Node.js** and **npm** (Node Package Manager) should be installed on your system. You can download and install Node.js and npm from the official Node.js website.
 - **MySQL** should be installed and running on your system.
 
-## Langkah 1: Clone the Repository
+## Step 1: Clone the Repository
 To clone the repository, open a terminal or command prompt and run the following command:
 
 ```bash
